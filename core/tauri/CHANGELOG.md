@@ -1,5 +1,31 @@
 # Changelog
 
+## \[2.0.0-beta.23]
+
+### New Features
+
+- [`148f04887`](https://www.github.com/tauri-apps/tauri/commit/148f048871caee21498b236c058b8890f2b66cc7) ([#9979](https://www.github.com/tauri-apps/tauri/pull/9979)) Add `defaultWindowIcon` to the JS `app` module to retrieve the default window icon in JS.
+- [`5b769948a`](https://www.github.com/tauri-apps/tauri/commit/5b769948a81cac333f64c870a470ba6525bd5cd3) ([#9959](https://www.github.com/tauri-apps/tauri/pull/9959)) Add `include_image` macro to help embedding instances of `Image` struct at compile-time in rust to be used with window, menu or tray icons.
+- [`ddaabda36`](https://www.github.com/tauri-apps/tauri/commit/ddaabda365ed5dc0780925049473989cbd1d7ea3) ([#9922](https://www.github.com/tauri-apps/tauri/pull/9922)) Add `WebviewWindowBuilder::on_download`.
+
+### Bug Fixes
+
+- [`e6e17ad1c`](https://www.github.com/tauri-apps/tauri/commit/e6e17ad1c8a6b53463946c407a354c250bd7e701) ([#9954](https://www.github.com/tauri-apps/tauri/pull/9954)) Add `std` feature to `raw-window-handle` crate so that using `default-features = false` on `tauri` crate can work
+- [`f29b78811`](https://www.github.com/tauri-apps/tauri/commit/f29b78811080bc8313459f34545152d939c62bf6) ([#9862](https://www.github.com/tauri-apps/tauri/pull/9862)) On Windows, handle resizing undecorated windows natively which improves performance and fixes a couple of annoyances with previous JS implementation:
+
+  - No more cursor flickering when moving the cursor across an edge.
+  - Can resize from top even when `data-tauri-drag-region` element exists there.
+  - Upon starting rezing, clicks don't go through elements behind it so no longer accidental clicks.
+
+### Dependencies
+
+- Upgraded to `tauri-utils@2.0.0-beta.18`
+- Upgraded to `tauri-build@2.0.0-beta.18`
+- Upgraded to `tauri-macros@2.0.0-beta.18`
+- Upgraded to `tauri-runtime-wry@2.0.0-beta.19`
+- Upgraded to `tauri-runtime@2.0.0-beta.19`
+- [`f955f7b49`](https://www.github.com/tauri-apps/tauri/commit/f955f7b4903bcea376c0a8b430736f66c8cebf56) ([#9929](https://www.github.com/tauri-apps/tauri/pull/9929)) Switch from `dirs_next` to `dirs` as `dirs_next` is now unmaintained while `dirs` is
+
 ## \[2.0.0-beta.22]
 
 ### Bug Fixes
